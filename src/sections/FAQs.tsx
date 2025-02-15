@@ -1,3 +1,4 @@
+import { div } from "motion/react-client";
 import { FC } from "react";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
@@ -25,7 +26,28 @@ const faqs = [
 ];
 
 const FAQs: FC = () => {
-  return <div>FAQs</div>;
+  return <section className="section">
+    <div className="container">
+      <h2 className="text-4xl md:text-7xl lg:text-8xl">FAQs</h2>
+      <div className="mt-10 md:mt-16 lg:mt-20 last:border-b">
+        {faqs.map(({ question, answer }) => (
+          <div key={question} className="border-t border-stone-400 border-dotted py-6 md:py-8 lg:py-10">
+            <div className="flex items-center justify-between gap-4">
+              {/* question text */}
+              <div className="text-2xl md:text-3xl lg:text-4xl">{question}</div>
+              {/* plus icon svg */}
+             <div className="inline-flex items-center justify-center size-11 border border-stone-400  rounded-full shrink-0">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+             </div>
+
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 };
 
 export default FAQs;
