@@ -129,7 +129,7 @@ const handleClickMobileMavItem=(e:React.MouseEvent<HTMLAnchorElement>)=>{
 
   return <header className=" ">
     {/* layer of click on hamburger */}
-    <div className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900
+    <div className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-10
     " ref={navScope}>
       <nav className="mt-20 flex flex-col ">
         {navItems.map(({ label, href }) => (
@@ -154,7 +154,7 @@ const handleClickMobileMavItem=(e:React.MouseEvent<HTMLAnchorElement>)=>{
     </div>
 
     {/* logo */}
-    <div className="fixed top-0 left-0 w-full mix-blend-difference backdrop-blur-md">
+    <div className="fixed top-0 left-0 w-full mix-blend-difference backdrop-blur-md z-10">
       <div className="container !max-w-full">
         <div className="flex  justify-between h-20 items-center">
           {/* left logo*/}
@@ -167,7 +167,7 @@ const handleClickMobileMavItem=(e:React.MouseEvent<HTMLAnchorElement>)=>{
       </div>
     </div>
     {/* button and hamburger */}
-    <div className="fixed top-0 left-0 w-full  ">
+    <div className="fixed top-0 left-0 w-full  z-10 ">
       <div className="container !max-w-full">
         <div className="flex  justify-end h-20 items-center">
 
