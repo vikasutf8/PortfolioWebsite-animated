@@ -1,7 +1,11 @@
 "use client"
 import { FC, useEffect, useRef } from "react";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-import heroImage from "@/assets/images/hero-image.jpg";
+
+import heroImage6 from "@/assets/images/heroImage6.jpeg"
+
+
+
 import Image from "next/image";
 import Button from "@/components/button";
 import SplitType from "split-type";
@@ -94,7 +98,7 @@ const Hero: FC = () => {
         style={{
           width:portraitWidth,
         }}>
-          <Image src={heroImage} alt="my profile photo" className="size-full object-cover" />
+          <Image src={heroImage6} alt="my profile photo" className="size-full object-cover" />
         </motion.div>
       </div>
     </div>

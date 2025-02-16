@@ -1,5 +1,5 @@
 "use client"
-import { div } from "motion/react-client";
+
 import { FC, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { twMerge } from "tailwind-merge";
@@ -10,22 +10,21 @@ const faqs = [
   {
     question: "How long does it take to build a website?",
     answer:
-      "It depends on the complexity of the website and the scope of the project.",
+      "  Timeline depends on architecture, API complexity, database design, caching, and deployment strategies.",
   },
   {
     question: "What is your development process like?",
     answer:
-      "I follow a hands-on approach starting with project planning, building out the core features, and regular check-ins to make sure everything matches your needs.",
+      " I follow agile development, microservices, modular architecture, API-first approach, and CI/CD automation.",
   },
   {
     question: "Do you work with international clients?",
     answer:
-      "Yes, I work with clients globally and can accommodate different time zones for meetings and communication.",
+      "Yes, I develop scalable, cloud-native applications with global accessibility, secure authentication, and optimized performance.",
   },
   {
     question: "What industries do you specialize in?",
-    answer:
-      "I have experience across various industries including technology, retail, hospitality, and professional services, bringing fresh perspectives to each project.",
+    answer:"Expertise in fintech, AI, recruitment, and sustainability, focusing on data-driven applications and distributed systems"
   },
 ];
 
