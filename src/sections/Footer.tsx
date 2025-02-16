@@ -26,12 +26,12 @@ const navItems = [
 
 
 const Footer: FC = () => {
-  return <footer className="bg-stone-900 text-slate-100">
-    <div className="container">
-      <div className="section">
-        <div className="flex items-center gap-3 mt-8">
+  return <footer className="bg-stone-900 text-slate-100"id="contact">
+    <div className="container py-20">
+      <div className="section ">
+        <div className="flex items-center gap-3">
           <div className="size-3 rounded-full bg-green-400"></div>
-          <span className="uppercase">Currently seeking for full-time Software Developer Role</span>
+          <span className="uppercase">Currently  seeking  for  full-time  Software  Developer  Role</span>
         </div>
         <div className="grid md:grid-cols-3 md:items-center">
           <div className="md: col-span-2">
