@@ -1,32 +1,34 @@
 import { FC } from "react";
-import image1 from "@/assets/images/project-1.jpg";
-import image2 from "@/assets/images/project-2.jpg";
-import image3 from "@/assets/images/project-3.jpg";
-import image4 from "@/assets/images/project-4.jpg";
-import image5 from "@/assets/images/project-5.jpg";
+import image6 from "@/assets/images/project6.png";
+import image7 from "@/assets/images/project7.png";
+// import image10 from "@/assets/images/project10.png"
+import image9 from "@/assets/images/project9.png"
+import image8 from "@/assets/images/project8.png"
+
+
 import Image from "next/image";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const projects = [
   {
-    name: "Artisan Brew Co.",
-    image: image1,
+    name: "Waste-2-Money",
+    image: image6,
   },
   {
-    name: "Wavelength Studios",
-    image: image2,
+    name: "Job Hunting Platform",
+    image: image7,
   },
   {
-    name: "Nova Fitness",
-    image: image3,
+    name: "Real State Housing ",
+    image: image8,
   },
   {
-    name: "Urban Plates",
-    image: image4,
+    name: "Tech Blogging",
+    image: image9,
   },
   {
-    name: "Bloom Botanicals",
-    image: image5,
+    name: "Book Store WebPage",
+    image: image9,
   },
 ];
 

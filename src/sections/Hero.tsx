@@ -12,7 +12,7 @@ import SplitType from "split-type";
 import { useAnimate, motion, useScroll, useTransform } from "motion/react";
 import { stagger } from "motion";
 
-
+// https://drive.google.com/file/d/1enOkLogOXDgRDOKLxXvzh17AoQ_g-ZA9/view?usp=sharing
 const Hero: FC = () => {
 
   const [titleScope, titleAnimate] = useAnimate();
@@ -63,14 +63,15 @@ const Hero: FC = () => {
               }}
             >
               <Button variant="secondary"
+              onClick={() => window.open(' https://drive.google.com/file/d/1enOkLogOXDgRDOKLxXvzh17AoQ_g-ZA9/view?usp=sharing', '_blank', 'noopener,noreferrer')}
                 iconAfter={
                   <div className="overflow-hidden size-5">
                     <div className="h-5 w-10 flex group-hover/button:-translate-x-1/2 transition-transform duration-500">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
                       </svg>
                       {/* duplicate for animate */}
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
                       </svg>
 
@@ -87,7 +88,9 @@ const Hero: FC = () => {
                 duration: 0.5,
                 delay: 2,
               }}>
-              <Button variant="text">Let's Talk</Button>
+              <Button variant="text"
+               onClick={() => window.open('https://linkedin.com/in/vikasarya1889/', '_blank', 'noopener,noreferrer')}
+              >Let's Talk</Button>
             </motion.div>
           </div>
         </div>
