@@ -3,7 +3,7 @@
 import { FC, useEffect, } from "react";
 import Button from "@/components/button";
 import { useInView } from "motion/react";
-import { div } from "motion/react-client";
+// import { div } from "motion/react-client";
 import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
 
 const navItems = [

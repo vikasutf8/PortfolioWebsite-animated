@@ -90,7 +90,7 @@ const Hero: FC = () => {
               }}>
               <Button variant="text"
                onClick={() => window.open('https://linkedin.com/in/vikasarya1889/', '_blank', 'noopener,noreferrer')}
-              >Let's Talk</Button>
+              >Let&apos;s Talk</Button>
             </motion.div>
           </div>
         </div>

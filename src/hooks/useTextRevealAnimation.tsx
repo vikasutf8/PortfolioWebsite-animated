@@ -1,8 +1,8 @@
 "use client"
 
 import { stagger } from 'motion'
-import { transform, useAnimate } from 'motion/react'
-import React, { useEffect } from 'react'
+import {  useAnimate } from 'motion/react'
+import { useEffect } from 'react'
 import SplitType from 'split-type'
 
 function useTextRevealAnimation() {

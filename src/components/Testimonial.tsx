@@ -1,10 +1,10 @@
 
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import Image from 'next/image';
-import React, { HTMLAttributes, use, useEffect } from 'react'
+// import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+// import Image from 'next/image';
+import  { HTMLAttributes,  useEffect } from 'react'
 import { twMerge } from 'tailwind-merge';
-import SplitType from 'split-type';
-import { usePresence,motion } from 'motion/react';
+// import SplitType from 'split-type';
+import { usePresence } from 'motion/react';
 import useTextRevealAnimation from '@/hooks/useTextRevealAnimation';
 
 

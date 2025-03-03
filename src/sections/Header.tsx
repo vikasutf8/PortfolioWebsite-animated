@@ -4,7 +4,7 @@ import { FC, useEffect } from "react";
 import Button from "@/components/button";
 import { useState } from "react";
 import { motion, useAnimate } from "motion/react";
-import { div } from "motion/react-client";
+// import { div } from "motion/react-client";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
   {

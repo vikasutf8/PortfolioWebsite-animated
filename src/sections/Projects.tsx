@@ -2,7 +2,7 @@ import { FC } from "react";
 import image6 from "@/assets/images/project6.png";
 import image7 from "@/assets/images/project7.png";
 // import image10 from "@/assets/images/project10.png"
-import image9 from "@/assets/images/project9.png"
+// import image9 from "@/assets/images/project9.png"
 import image8 from "@/assets/images/project8.png"
 import image10 from "@/assets/images/project10.png"
 

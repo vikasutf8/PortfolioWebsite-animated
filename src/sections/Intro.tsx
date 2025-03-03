@@ -1,6 +1,6 @@
 "use client"
 
-import { delay, transform } from "motion";
+// import { delay, transform } from "motion";
 import { stagger, useAnimate, useInView } from "motion/react";
 import { FC, useEffect } from "react";
 import SplitType from "split-type";

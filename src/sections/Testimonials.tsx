@@ -1,15 +1,17 @@
 "use client"
 import { FC, useRef, useState } from "react";
 
-import image1 from "@/assets/images/testimonial-1.jpg";
-import image2 from "@/assets/images/testimonial-2.jpg";
-import image3 from "@/assets/images/testimonial-3.jpg";
-import { div } from "motion/react-client";
-import Image from "next/image";
+// import image1 from "@/assets/images/testimonial-1.jpg";
+// import image2 from "@/assets/images/testimonial-2.jpg";
+// import image3 from "@/assets/images/testimonial-3.jpg";
+// import { div } from "motion/react-client";
+// import Image from "next/image";
 import Button from "@/components/button";
 import Testimonial from "@/components/Testimonial";
-import { useScroll, motion, useTransform, AnimatePresence, useAnimate } from "motion/react";
-import SplitType from "split-type";
+import { useScroll, motion, useTransform, AnimatePresence, 
+  // useAnimate
+ } from "motion/react";
+// import SplitType from "split-type";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const testimonials = [
   {
@@ -18,8 +20,8 @@ const testimonials = [
     role: "Software Developer Intern",
     quote:
       "Implemented Domain-Driven Design in a microservices-based backend using Spring Boot and Nginx, ensuring scalable data modeling with MySQL.",
-    image: "",
-    imagePositionY: 0.2,
+    // image: "",
+    // imagePositionY: 0.2,
   },
   {
     name: "June 2024 – August 2024",
@@ -27,8 +29,8 @@ const testimonials = [
     role: "Full Stack Developer Intern",
     quote:
       "Designed a microservices architecture within an MVC-based system, optimizing API integration and UI responsiveness.",
-    image: image2,
-    imagePositionY: 0.1,
+    // image: image2,
+    // imagePositionY: 0.1,
   },
   {
     name: "December 2023 – April 2024",
@@ -36,8 +38,8 @@ const testimonials = [
     role: "Software Developer Intern",
     quote:
       "MVT-based refined Django APIs to boost search performance by 40%, optimized PostgreSQL storage, and React.js for a seamless user experience.",
-    image: image3,
-    imagePositionY: 0.55,
+    // image: image3,
+    // imagePositionY: 0.55,
   },
 ];
 
@@ -92,7 +94,9 @@ const Testimonials: FC = () => {
       <div className="mt-20 ">
         <AnimatePresence mode="wait" initial={false}>
           {testimonials.map((
-            { name, company, role, quote, image, imagePositionY },
+            { name, company, role, quote,
+              //  image, imagePositionY
+               },
             index) => index === testimonialIndex && (
               <Testimonial
                 name={name}
