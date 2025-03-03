@@ -27,7 +27,7 @@ const Intro: FC = () => {
         transform: 'translateY(0%)',
       }, {
         duration: 0.3,
-        delay: stagger(0.2)
+        delay: stagger(0.1)
       }
       )
     }
@@ -38,7 +38,7 @@ const Intro: FC = () => {
       <div className="container">
         <h2 className="text-4xl md:text-6xl lg:text-7xl lg:w-[80%]">
           {/* <span> */}
-          A Full-Stack Software Engineer and CSE graduate from IIITDM Jabalpur (2025) with strong fundamentals, expertise in microservices & collaborate synergistically in open-source development
+          A Full-Stack Software Engineer and CSE graduate from IIITDM Jabalpur (2025) with strong fundamentals, expertise in Java (Spring Boot), Python (Django), SQL, microservices, and a passion for scalable systems and open-source contributions.
           {/* </span> */}
         </h2>
       </div>

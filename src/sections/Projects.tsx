@@ -4,7 +4,7 @@ import image7 from "@/assets/images/project7.png";
 // import image10 from "@/assets/images/project10.png"
 import image9 from "@/assets/images/project9.png"
 import image8 from "@/assets/images/project8.png"
-
+import image10 from "@/assets/images/project10.png"
 
 import Image from "next/image";
 
@@ -22,20 +22,20 @@ const projects = [
     name: "Real State Housing ",
     image: image8,
   },
-  {
-    name: "Tech Blogging",
-    image: image9,
-  },
+  // {
+  //   name: "Tech Blogging",
+  //   image: image9,
+  // },
   {
     name: "Book Store WebPage",
-    image: image9,
+    image: image10,
   },
 ];
 
 const Projects: FC = () => {
   return <section className="py-24 md:py-32 lg:py-40" id="projects">
     <div className="container">
-      <h2 className="text-4xl md:text-7xl lg:text-8xl"> Selected Works</h2>
+      <h2 className="text-4xl md:text-7xl lg:text-8xl"> Personal Works</h2>
       {/* project mapping  */}
       <div className="mt-10 md:mt-16 lg:mt-20">
         {projects.map(({ name, image }) => (

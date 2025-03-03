@@ -113,19 +113,19 @@ const Header: FC = () => {
     }
   }, [isOpen, topLineAnimate, topLineScope, bottomLineAnimate, bottomLineScope, navScope, navAnimate])
 
-const handleClickMobileMavItem=(e:React.MouseEvent<HTMLAnchorElement>)=>{
-  e.preventDefault()
-  setIsOpen(false)
-  
-  const url =new URL(e.currentTarget.href)
-  const hash =url.hash;
-  const target = document.querySelector(hash)
-  if(!target)return;
+  const handleClickMobileMavItem = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    setIsOpen(false)
 
-  target.scrollIntoView({behavior :'smooth'})
-  //element.scrollIntoView({behavior :'smooth})
-  // console.log(e.currentTarget.href ," ", hash)
-}
+    const url = new URL(e.currentTarget.href)
+    const hash = url.hash;
+    const target = document.querySelector(hash)
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: 'smooth' })
+    //element.scrollIntoView({behavior :'smooth})
+    // console.log(e.currentTarget.href ," ", hash)
+  }
 
   return <header className=" ">
     {/* layer of click on hamburger */}
@@ -134,9 +134,9 @@ const handleClickMobileMavItem=(e:React.MouseEvent<HTMLAnchorElement>)=>{
       <nav className="mt-20 flex flex-col ">
         {navItems.map(({ label, href }) => (
 
-          <a href={href} key={label} 
-          className=" text-stone-200 border-t last:border-b border-stone-800 py-8 group/nav-item relative isolate"
-           onClick={handleClickMobileMavItem} >
+          <a href={href} key={label}
+            className=" text-stone-200 border-t last:border-b border-stone-800 py-8 group/nav-item relative isolate"
+            onClick={handleClickMobileMavItem} >
             <div className="container !max-w-full flex items-center justify-between">
               <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-500">
                 {label}
@@ -194,11 +194,14 @@ const handleClickMobileMavItem=(e:React.MouseEvent<HTMLAnchorElement>)=>{
 
               </svg>
             </div>
-            <Button
-              variant="primary"
-              className=" hidden md:inline-flex ">
-              Contect Me
-            </Button>
+            <a href="https://github.com/vikasutf8" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="primary"
+                className="hidden md:inline-flex"
+              >
+                Contact Me
+              </Button>
+            </a>
           </div>
         </div>
       </div>

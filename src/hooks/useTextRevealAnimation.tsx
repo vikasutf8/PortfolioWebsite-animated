@@ -21,11 +21,22 @@ function useTextRevealAnimation() {
             transform:'translateY(0)'
         },{
             duration: 0.5,
-            delay:stagger(.2)
+            delay:stagger(.1)
         })
     }
+
+    const exitAnimation =()=>{
+      return animate(scope.current.querySelectorAll('.word'),{
+        transform : 'translateY(100%)'
+      },{
+        duration:.3,
+        delay:stagger(-.25,{
+          startDelay : scope.current.querySelectorAll('.word').length * 0.025
+        })
+      })
+    }
   return {
-    scope,entranceAnimation,
+    scope,entranceAnimation,exitAnimation
   }
 }
 

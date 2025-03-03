@@ -1,11 +1,15 @@
-import { FC } from "react";
+"use client"
+import { FC, useRef, useState } from "react";
+
 import image1 from "@/assets/images/testimonial-1.jpg";
 import image2 from "@/assets/images/testimonial-2.jpg";
 import image3 from "@/assets/images/testimonial-3.jpg";
 import { div } from "motion/react-client";
 import Image from "next/image";
 import Button from "@/components/button";
-
+import Testimonial from "@/components/Testimonial";
+import { useScroll, motion, useTransform, AnimatePresence, useAnimate } from "motion/react";
+import SplitType from "split-type";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const testimonials = [
   {
@@ -14,7 +18,7 @@ const testimonials = [
     role: "Software Developer Intern",
     quote:
       "Implemented Domain-Driven Design in a microservices-based backend using Spring Boot and Nginx, ensuring scalable data modeling with MySQL.",
-    image: image1,
+    image: "",
     imagePositionY: 0.2,
   },
   {
@@ -39,55 +43,78 @@ const testimonials = [
 
 const Testimonials: FC = () => {
 
-  const testimonialIndex = 0;
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+  const titleRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: titleRef,
+    offset: ["start end", 'end start']
+  })
+  const transformTop = useTransform(scrollYProgress, [0, 1], ['0%', '-20%'])
+  const transformBottom = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
+
+  const handleClickNext = () => {
+    setTestimonialIndex(curr => {
+      if (curr === Testimonials.length - 1) {
+        return 0
+      }
+      return curr + 1
+    })
+  }
+
+  const handleClickPrev = () => {
+    setTestimonialIndex(curr => {
+      if (curr === 0) {
+        return Testimonials.length - 1
+      }
+      return curr - 1
+    })
+  }
+
 
   return <section className="section">
-    <h2 className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden">
-      <span className="whitespace-nowrap">
+    <h2 className="text-4xl md:text-7xl lg:text-8xl flex flex-col overflow-hidden tracking-tighter " ref={titleRef}>
+      <motion.span className="whitespace-nowrap"
+        style={{
+          x: transformTop,
+        }}>
         Reflections from my journey in software development.
-      </span>
-      <span className="whitespace-nowrap self-end text-red-orange-500">
+      </motion.span>
+      <motion.span className="whitespace-nowrap self-end text-red-orange-500"
+        style={{
+          x: transformBottom,
+        }}>
         Reflections from my journey in software development.
-      </span>
+      </motion.span>
     </h2>
 
     <div className="container">
       <div className="mt-20 ">
-        {testimonials.map(({ name, company, role, quote, image, imagePositionY }, index) => index === testimonialIndex && (
-          <div key={name} className="grid md:grid-cols-5 md:gap-8 lg:gap-16 md:items-center ">
-            <div className="aspect-square md:aspect-[9/16] md:col-span-2">
-              <Image src={image} alt={role} className="size-full object-cover"
-                style={{
-                  objectPosition: `50% ${imagePositionY * 100}%`
-                }} />
-            </div>
-            <blockquote className="md:col-span-3">
-              {/*  */}
-              <div className="text-3xl 
-            md:text-[42px] leading-[44px] lg:text-6xl
-            mt-8 md:mt-0">
-                <span>&ldquo;</span>
-                <span>
-                  {quote}
-                </span>
-                <span>&rdquo;</span>
-              </div>
-              <cite className="mt-4 md:mt-8 not-italic md:text-lg block lg:text-xl">
-                <div>
-              <div>  {name}</div>
-                <div>{role} at {company}</div>
-                </div>
-              </cite>
-            </blockquote>
-          </div>
+        <AnimatePresence mode="wait" initial={false}>
+          {testimonials.map((
+            { name, company, role, quote, image, imagePositionY },
+            index) => index === testimonialIndex && (
+              <Testimonial
+                name={name}
 
-        ))}
+                company={company}
+                role={role}
+                quote={quote}
+                // image={image}
+                // imagePositionY={imagePositionY}
+                key={name}
+              />
+
+            ))}
+        </AnimatePresence >
       </div>
       {/* arrows  */}
       <div className="flex gap-4 mt-6 lg:mt-10 ">
         <Button
           variant="secondary"
-          className="border border-stone-500 size-11 inline-flex items-center justify-center rounded-full">
+          className="border border-stone-500 size-11 inline-flex items-center justify-center rounded-full"
+          onClick={handleClickPrev}
+        >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
           </svg>
@@ -95,7 +122,8 @@ const Testimonials: FC = () => {
         </Button>
         <Button
           variant="secondary"
-          className="border border-stone-500 size-11 inline-flex items-center justify-center rounded-full">
+          className="border border-stone-500 size-11 inline-flex items-center justify-center rounded-full"
+          onClick={handleClickNext}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
           </svg>
